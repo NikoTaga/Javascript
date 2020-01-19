@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+  
+    <script>
+        
+        
+        
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        function Car(make, model, year, owner) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.owner = owner;
+            this.displayCar = displayCar;
+        }
+
+        function displayCar() {
+            var result = "A Beautiful " + this.year + " " + this.make +
+                " " + this.model;
+            return result
+        }
+        var rand = new Person("Rand McKinnon", 33, "M");
+        var ken = new Person("Ken Jones", 39, "M");
+
+        var car1 = new Car("Eagle", "Talon TSi", 1993, rand);
+        var car2 = new Car("Nissan", "300ZX", 1992, ken);
+
+        console.log(car1.owner);
+        console.log(car1.displayCar());
+        console.log(car2.displayCar());
+        console.log(car1.owner.sex);
+
+    </script>
+
+</body>
+
+</html>

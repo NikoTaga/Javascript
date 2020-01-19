@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        
+        function Post(author, text) {
+            this.author = author;
+            this.text = text;
+            this.show = function() {
+                alert(this.author + " say: " + this.text);
+            };
+        }
+        const post1 = new Post('Admin', 'lll');
+        console.log(post1.author);
+        console.log(post1.text);
+        post1.show();
+        
+    </script>
+
+</body>
+
+</html>
