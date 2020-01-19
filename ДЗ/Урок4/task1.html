@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function NunObj(units, tens, hundereds) {
+            this.units = units;
+            this.tens = tens;
+            this.hundereds = hundereds;
+        }
+
+        function numInObj(num) {
+            let newNumObj = new NunObj();
+            if (typeof num == "undefined") {
+                return newNumObj;
+            } else {
+                newNumObj.units = Math.floor(num  % 10);
+                newNumObj.tens = Math.floor(num  / 10 % 10);
+                newNumObj.hundereds = Math.floor(num  / 100);
+                return newNumObj;
+            }
+        }
+
+        let num = +prompt("введите число из 3 цифр");
+
+        if (Number.isInteger(num) && num >= 0 && num <= 999) {
+            console.log(numInObj(num));
+        } else {
+            console.log('неправильный данные');
+            console.log(numInObj());
+
+        }
+    </script>
+
+</body></html>
