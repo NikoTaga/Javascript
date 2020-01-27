@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        
+//        расставляем фигуры
+        function figure(i, j) {
+            if (i == 2) {               //пешки
+                return '&#9817;';
+            };
+            if (i == 7) {              //пешки
+                return '&#9823;';
+            };
+            
+            let num = String(i) + String(j);
+            if (String(num)[0] == '1') {
+                switch (String(num)[1]) {
+                    case '1':
+                    case '8':
+                        return '&#9814;';
+                    case '3':
+                    case '6':
+                        return '&#9815;';
+                    case '2':
+                    case '7':
+                        return '&#9816;';
+                    case '5':
+                        return '&#9813;';
+                    case '4':
+                        return '&#9812;';
+                }
+            };
+
+            if (String(num)[0] == '8') {
+                switch (String(num)[1]) {
+                    case '1':
+                    case '8':
+                        return '&#9820;';
+                    case '3':
+                    case '6':
+                        return '&#9821;';
+                    case '2':
+                    case '7':
+                        return '&#9822;';
+                    case '5':
+                        return '&#9819;';
+                    case '4':
+                        return '&#9818;';
+                }
+            };
+
+            return '';
+        }
+
+//        создаем контейнер для горизонтальных квадратов (ячеек)
+        function makeCellsConteyners() {
+            let conteiner = document.createElement('div');
+            conteiner.className = 'cell-conteyner';
+            document.body.appendChild(conteiner);
+        }
+
+//        создаем горизонтальные ячейки и заполняем их 
+        function printHorizontCells(i, j) {
+            let cell = document.createElement('div');
+            document.getElementsByClassName('cell-conteyner')[i].appendChild(cell);
+            cell.className = 'cell';
+            
+//            Заполняем буквы
+            if (i == 0 && !((j == 0) || (j == 9))) {
+                cell.textContent = String.fromCharCode(64 + j);
+                return;
+            };
+
+            if (i == 9 && !((j == 0) || (j == 9))) {
+                cell.textContent = String.fromCharCode(64 + j);
+                return;
+            };
+            
+//            заполняем цифры
+            if (j == 0 && !((i == 0) || (i == 9))) {
+                cell.textContent = (9 - i);
+                return;
+            };
+
+            if (j == 9 && !((i == 0) || (i == 9))) {
+                cell.textContent = (9 - i);
+                return;
+            };
+            
+//            заполняем игровое поле
+            if (((i + j) % 2 != 0) && !((i == 0) || (i == 9))) {
+                cell.classList.add('broun');
+                cell.innerHTML = figure(i, j);
+                return;
+            };
+
+            if (((i + j) % 2 == 0) && !((i == 0) || (i == 9))) {
+                cell.classList.add('wite');
+                //                cell.innerHTML = Number(String(i) + String(j));
+                cell.innerHTML = figure(i, j);
+                return;
+            };
+
+        }
+
+        for (let i = 0; i < 10; i++) {
+            makeCellsConteyners();
+            for (let j = 0; j < 10; j++) {
+                printHorizontCells(i, j);
+            };
+
+        };
+    </script>
+
+</body></html>
