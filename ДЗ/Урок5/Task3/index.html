@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+
+<body>
+
+    <button class="visible">Показать</button>
+    <div class='modal'>
+        <button class='close'>X</button>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore perspiciatis ea mollitia cupiditate officiis doloribus, laborum? In id deserunt quidem obcaecati quo officiis at sequi, amet, ipsa nulla aspernatur porro.
+    </div>
+
+    <script>
+        'use strict';
+
+        let buttonVisible = document.getElementsByClassName('visible')[0];
+        let buttonClose = document.getElementsByClassName('close')[0];
+        let divModal = document.querySelector('div');
+
+        buttonVisible.addEventListener('click', function() {
+            divModal.style.display = 'block';
+             divModal.classList.remove('scale-down-center');
+            divModal.classList.add('scale-up-center');
+        });
+
+        buttonClose.addEventListener('click', function() {
+            divModal.classList.remove('scale-up-center');
+            divModal.classList.add('scale-down-center');
+            setTimeout(function(){
+                divModal.style.display = 'none';
+            }, 400);
+            
+        });
+    </script>
+
+</body></html>
