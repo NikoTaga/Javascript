@@ -1,0 +1,34 @@
+.cell {
+    width: 50px;
+    height: 100%;
+    float: left;
+    color: #8B4513;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5em;
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.wite {
+    border-color: black;
+    font-size: 2.5em;
+    background-color: yellow;
+}
+
+.broun {
+    border-color: black;
+    font-size: 2.5em;
+    background-color: orange;
+}
+
+.cell-conteyner {
+    background-color: yellow;
+    width: 520px;
+    height: 50px;
+    color: blanchedalmond;
+    background-color: yellow;
+    font-weight: bold;
+    border: 1px solid black;
+    border-color: transparent;
+}
